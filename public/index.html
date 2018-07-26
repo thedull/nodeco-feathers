@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Welcome to Feathers</title>
+  </head>
+  <body>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+        <script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+        <script type="text/javascript" src="http://localhost:3030/primus/primus.js"></script>
+        <script>
+          var socket = new Primus('http://localhost:3030');
+          var app = feathers();
+          app.configure(feathers.primus(socket));
+        </script>
+  </body>
+</html>
